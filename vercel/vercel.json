@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/login", "destination": "/api/login.js" },
+    { "source": "/verify", "destination": "/api/verify.js" },
+    { "source": "/refresh", "destination": "/api/refresh.js" },
+    { "source": "/logout", "destination": "/api/logout.js" },
+    { "source": "/live", "destination": "/api/live.js" },
+    { "source": "/stream", "destination": "/api/stream.js" },
+    { "source": "/auth", "destination": "/api/auth.js" },
+    { "source": "/s-live", "destination": "/api/s-live.js" },
+    { "source": "/playlist", "destination": "/api/playlist.js" },
+    { "source": "/cpapi", "destination": "/api/cpapi.js" },
+    { "source": "/cpauth", "destination": "/api/cpauth.js" },
+    { "source": "/cpstream", "destination": "/api/cpstream.js" },
+    { "source": "/cpsonyauth", "destination": "/api/cpsonyauth.js" }
+  ]
+}
