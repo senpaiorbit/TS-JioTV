@@ -1,4 +1,4 @@
-const { getCredFromCookies, refresh_token, setCredentialsCookies, getJioTvData, parseJioCred, jio_sony_headers, cUrlGetData, cUrlGetResponse, setCorsHeaders } = require('./lib/functions');
+const { getCredFromCookies, refresh_token, setCredentialsCookies, getJioTvData, parseJioCred, jio_sony_headers, cUrlGetData, cUrlGetResponse, setCorsHeaders } = require('./_lib/functions');
 
 module.exports = async function handler(req, res) {
   setCorsHeaders(res);
@@ -17,7 +17,7 @@ module.exports = async function handler(req, res) {
     if (haystack.code !== 200) {
       cred = await refresh_token(req);
       if (cred) {
-        const key = require('./lib/functions').getCookie(req, 'jiotv_key') || '500';
+        const key = require('./_lib/functions').getCookie(req, 'jiotv_key') || '500';
         setCredentialsCookies(res, cred, key);
         haystack = await getJioTvData(id, cred);
       }
