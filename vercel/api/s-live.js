@@ -1,4 +1,4 @@
-const { getCredFromCookies, parseJioCred, jio_sony_headers, cUrlGetData, setCorsHeaders } = require('./lib/functions');
+const { getCredFromCookies, parseJioCred, jio_sony_headers, cUrlGetData, setCorsHeaders } = require('./_lib/functions');
 
 module.exports = async function handler(req, res) {
   setCorsHeaders(res);
