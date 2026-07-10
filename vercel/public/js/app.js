@@ -6,7 +6,6 @@
   var genreFilter = document.getElementById('genreFilter');
   var langFilter = document.getElementById('langFilter');
   var catchupFilter = document.getElementById('catchupFilter');
-  var loginModal = document.getElementById('loginModal');
   var loginContent = document.getElementById('loginContent');
   var loginButton = document.getElementById('loginButton');
   var refreshButton = document.getElementById('refreshButton');
@@ -113,9 +112,9 @@
   }
   function fetchChannels() {
     charactersList.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500"><div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-purple-500 border-t-transparent mb-4"></div><p>Loading channels...</p></div>';
-    fetch('https://jioappsd.akamaized.net/appconfig/v3/getchannelslist?langId=6')
+    fetch('/channels')
       .then(function (r) { return r.json(); })
-      .then(function (data) { if (data && Array.isArray(data)) { allChannels = data; populateFilters(data); renderChannels(data); } else { throw new Error('Invalid channel data'); } })
+      .then(function (data) { if (data && Array.isArray(data)) { allChannels = data; populateFilters(data); renderChannels(data); } else if (data && data.length) { allChannels = data; populateFilters(data); renderChannels(data); } else { throw new Error('Invalid channel data'); } })
       .catch(function (err) { charactersList.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500"><span class="iconify text-4xl mb-2" data-icon="mdi:alert-circle-outline"></span><p>Failed to load channels.</p><p class="text-sm text-gray-600 mt-2">' + escapeHtml(err.message) + '</p></div>'; });
   }
   searchBar.addEventListener('input', applyFilters);
