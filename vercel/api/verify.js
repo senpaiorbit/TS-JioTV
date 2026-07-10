@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { CONSTANTS, encrypt_data, generateKey, setCorsHeaders, setCredentialsCookies } = require('./lib/functions');
+const { CONSTANTS, encrypt_data, generateKey, setCorsHeaders, setCredentialsCookies } = require('./_lib/functions');
 
 module.exports = async function handler(req, res) {
   setCorsHeaders(res);
