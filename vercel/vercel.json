@@ -4,7 +4,7 @@
     { "source": "/login", "destination": "/api/login.js" },
     { "source": "/verify", "destination": "/api/verify.js" },
     { "source": "/refresh", "destination": "/api/refresh.js" },
-    { "source": "/logout", "destination": "/api/logout.js" },
+    { "source": "/logout", "destination": "/api/refresh.js" },
     { "source": "/live", "destination": "/api/live.js" },
     { "source": "/stream", "destination": "/api/stream.js" },
     { "source": "/auth", "destination": "/api/auth.js" },
