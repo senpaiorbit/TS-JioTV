@@ -1,4 +1,4 @@
-const { cUrlGetData, setCorsHeaders } = require('./lib/functions');
+const { cUrlGetData, setCorsHeaders } = require('./_lib/functions');
 
 module.exports = async function handler(req, res) {
   setCorsHeaders(res);
