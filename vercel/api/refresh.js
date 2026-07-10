@@ -1,4 +1,4 @@
-const { getCredFromCookies, refresh_token, setCredentialsCookies, deleteCredentialsCookies, setCorsHeaders } = require('./lib/functions');
+const { getCredFromCookies, refresh_token, setCredentialsCookies, deleteCredentialsCookies, setCorsHeaders } = require('./_lib/functions');
 
 module.exports = async function handler(req, res) {
   setCorsHeaders(res);
@@ -14,7 +14,7 @@ module.exports = async function handler(req, res) {
       if (!newCred) {
         return res.status(500).json({ status: 'error', message: 'Refresh failed' });
       }
-      const key = require('./lib/functions').getCookie(req, 'jiotv_key') || '500';
+      const key = require('./_lib/functions').getCookie(req, 'jiotv_key') || '500';
       setCredentialsCookies(res, newCred, key);
       return res.status(200).json({ status: 'success', message: 'Token refreshed' });
     }
